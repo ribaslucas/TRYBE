@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Currículo Vitae</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    
+    <h1>Currículo Vitae</h1><br>
+    
+    <form action="" method="post" enctype="multipart/form-data">
+      
+      <fieldset>
+        
+        <div>
+          <label for="nome">Nome</label>
+          <input type="text" name="nome" id="nome" required="required" placeholder="Digite seu nome" maxlength="40">
+        </div>
+        <!-- Falta colocar o regex  -->
+        <div>
+          <label for="email">E-mail</label>
+          <input type="text" name="email" id="email" required="required" placeholder="Digite seu e-mail" maxlength="50">
+        </div>
+
+        <div>
+          <label for="cpf">CPF</label>
+          <input type="text" name="cpf" id="cpf" required="required" placeholder="Digite seu CPF" maxlength="11">
+        </div>
+
+        <div>
+          <label for="endereço">Endereço</label>
+          <input type="text" name="endereço" id="endereço" required="required" placeholder="Digite seu endereço" maxlength="200">
+        </div>
+
+        <div>
+          <label for="cidade">Cidade</label>
+          <input type="text" name="cidade" id="cidade" required="required" placeholder="Digite a cidade onde mora" maxlength="28">
+        </div>
+
+        <div>
+          <label for="uf">Estado</label>
+            <select name="uf" id="uf" required="required"></select>;
+        <div>
+          <p>Selecione o seu tipo de moradia </p>
+          <label for="casa"><input name="residencia" id="casa" value="casa" type="radio" />Casa</label>
+          <label for="Aparamento"><input name="residencia" id="Aparamento" value="Aparamento" type="radio" />Aparamento</label>
+        </div>
+      </fieldset>
+    
+      <fieldset>
+        <div>
+          <label for="ultimoEmprego">Último emprego</label>
+          <textarea name="ultimoEmprego" id="ultimoEmprego" required="required" placeholder="Escreva brevemente um resumo da sua última experiência" maxlength="10000" cols="100" rows="15"></textarea>
+        </div>
+
+        <div>
+          <label for="cargo">Cargo</label>
+          <input type="text" name="cargo" id="cargo" required="required" maxlength="40">
+        </div>
+
+        <div>
+          <label for="descricaoCargo">Descrição do cargo</label>
+          <input type="text" name="descricaoCargo" id="descricaoCargo" required="required" maxlength="500">
+        </div>
+
+        <div>
+          <label for="dataInicio">Data de início</label>
+          <input type="text" name="dataInicio" id="dataInicio" required="required">
+        </div>
+
+      </fieldset>
+
+        <div>
+          <button type="submit">Enviar</button>
+        </div>
+
+    <button id=button2 type="reset">Reset</button>
+    </form>
+
+
+
+  </body>
+  <script src="script.js"></script>
+</html>
