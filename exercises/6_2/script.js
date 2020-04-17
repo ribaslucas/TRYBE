@@ -34,37 +34,21 @@ function createStatesOptions() {
   }
 }
 
-// Validar o e-mail
-const email = document.querySelector('#email')
-
-function validateEmail() {
-  let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  if(email.value.match(mailformat)) {
-  return true;
-
-  } else {
-    alert("You have entered an invalid email address!");
-    return false;
-  }
-}
-
-email.addEventListener('change',validateEmail)
-
-// Validar a data
-const dateInput = document.getElementById("dataInicio");
-  const splittedDate = dateInput.value.split("/");
-  for (let index = 0; index < splittedDate.length; index += 1) {
-    if (splittedDate[0] < 1 || splittedDate > 31) {
-      alert("Invalid date!");
-      break;
-    } else if (splittedDate[1] < 1 || splittedDate > 12) {
-      alert("Invalid date!");
-      break;
-    } else if (splittedDate[2] < 0) {
-      alert("Invalid date!");
-      break;
-    }
-  }
+// // Validar a data (falta colocar em português)
+// const dateInput = document.getElementById("datepicker");
+//   const splittedDate = dateInput.value.split("/");
+//   for (let index = 0; index < splittedDate.length; index += 1) {
+//     if (splittedDate[0] < 1 || splittedDate > 31) {
+//       alert("Invalid date!");
+//       break;
+//     } else if (splittedDate[1] < 1 || splittedDate > 12) {
+//       alert("Invalid date!");
+//       break;
+//     } else if (splittedDate[2] < 0) {
+//       alert("Invalid date!");
+//       break;
+//     }
+//   }
 
 // submit button
 const submitButton = document.getElementById('submit');
@@ -94,3 +78,5 @@ window.onload = () => {
   //   allData();
   // });
 };
+
+let picker = new Pikaday({ field: document.getElementById('datepicker') });

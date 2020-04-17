@@ -4,7 +4,11 @@
     <title>Currículo Vitae</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="./materialize/css/materialize.css"  media="screen,projection"/>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <script src="./node_modules/just-validate/dist/js/just-validate.min.js"></script>
   </head>
   <body>   
     <h1>Currículo Vitae</h1><br>   
@@ -16,9 +20,9 @@
           type="text" 
           name="nome" 
           id="nome" 
+          data-validate-field="name"
           required="required" 
-          placeholder="Digite seu nome" 
-          maxlength="40">
+          placeholder="Digite seu nome">
         </div>
         <div>
           <label for="email">E-mail</label>
@@ -26,6 +30,7 @@
           type="email" 
           name="email" 
           id="email" 
+          data-validate-field="email"
           required="required" 
           placeholder="Digite seu e-mail" 
           maxlength="50">
@@ -86,7 +91,7 @@
         </div>
         <div>
           <label for="dataInicio">Data de início</label>
-          <input type="text" name="dataInicio" id="dataInicio" required="required">
+          <input type="text" name="dataInicio" id="datepicker" required="required">
         </div>
       </fieldset>
         <div>
