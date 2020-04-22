@@ -1,82 +1,60 @@
-// Selecionar Estados (Daniel Pantalena)
-const states = {
-  AC: 'Acre',
-  AL: 'Alagoas',
-  AP: 'Amapá',
-  AM: 'Amazonas',
-  BA: 'Bahia',
-  CE: 'Ceará',
-  DF: 'Destrito Federal',
-  ES: 'Espirito Santo',
-  GO: 'Goiás',
-  MA: 'Maranhão',
-  MT: 'Mato Grosso',
-  MS: 'Mato Grosso do Sul',
-  MG: 'Minas Gerais',
-  PA: 'Pará',
-  PB: 'Paraíba',
-  PR: 'Paraná',
-  PE: 'Pernambuco',
-  PI: 'Piauí',
-  RJ: 'Rio de Janeiro',
-  RN: 'Rio Grande do Norte',
-  RS: 'Rio Grande do Sul',
-  SC: 'Santa Catrina',
-  SP: 'São Paulo',
-};
-function createStatesOptions() {
-  const parentSelect = document.getElementById('state');
-  for (let i = 0; i < Object.keys(states).length; i += 1) {
-    const stateOption = document.createElement('option');
-    stateOption.value = Object.keys(states)[i];
-    stateOption.innerHTML = states[Object.keys(states)[i]];
-    parentSelect.appendChild(stateOption);
-  }
-}
+// Implemantando o calendário com jQuery
+$(document).ready(function () {
+  // Popup para selecionar a data
+  $('.datepicker').datepicker({
+    i18n: {
+    selectMonths: true,//Creates a dropdown to control month
+    selectYears: 15,//Creates a dropdown of 15 years to control year
+    //The title label to use for the month nav buttons
+    labelMonthNext: 'Proximo Mês',
+    labelMonthPrev: 'Mês Anterior',
+    //The title label to use for the dropdown selectors
+    labelMonthSelect: 'Selecionar Mês',
+    labelYearSelect: 'Selecionar Ano',
+    //Months and weekdays
+    monthsFull: [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ],
+    monthsShort: [ 'Jan', 'Fev', 'Mar', 'Abr', 'Maio', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez' ],
+    weekdaysFull: [ 'Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado' ],
+    weekdaysShort: [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb' ],
+    //Materialize modified
+    weekdaysLetter: [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],
+    //Today and clear
+    today: 'Hoje',
+    cancel: 'Cancelar',
+    clear: 'Limpar',
+    close: 'Fechar',
+    //The format to show on the `input` element
+    format: 'dd/mm/yyyy'
+  }});
+  // Selecionar os estados
+  $('.formSelect').formSelect();
+});
 
-// // Validar a data (falta colocar em português)
-// const dateInput = document.getElementById("datepicker");
-//   const splittedDate = dateInput.value.split("/");
-//   for (let index = 0; index < splittedDate.length; index += 1) {
-//     if (splittedDate[0] < 1 || splittedDate > 31) {
-//       alert("Invalid date!");
-//       break;
-//     } else if (splittedDate[1] < 1 || splittedDate > 12) {
-//       alert("Invalid date!");
-//       break;
-//     } else if (splittedDate[2] < 0) {
-//       alert("Invalid date!");
-//       break;
-//     }
-//   }
 
 // submit button
 const submitButton = document.getElementById('submit');
 
-// Validar se todos inputs foram inseridos
-function allData() {
-  const allDataDiv = document.createElement('div');
-  const inputs = document.querySelectorAll('input');
-  for (let i = 0; i < inputs.length; i += 1) {
-    const title = document.createElement('span');
-    const text = document.createElement('span');
-    title.innerHTML = `${inputs[i].name}: `;
-    text.innerHTML = `${inputs[i].value} <br><br>`;
-    allDataDiv.appendChild(title);
-    allDataDiv.appendChild(text);
+// submit form
+function submitForm(event) {
+  event.preventDefault();
+  const infos = event.target.elements;
+  const resultsDiv = document.createElement('div');
+  resultsDiv.classList.add('container');
+  for (let i = 0; i < infos.length; i += 1) {
+    if (infos[i].id !== '') {
+      let resultChild = document.createElement('p');
+      resultChild.innerHTML = `${infos[i].name}: ${infos[i].value} <br>`;
+      resultsDiv.appendChild(resultChild);
+    }
   }
-  document.body.appendChild(allDataDiv);
+  document.body.appendChild(resultsDiv);
 }
 
 
-window.onload = () => {
-  createStatesOptions();
-  // validateEmail();
-  // validateDate();
-  // submitButton.addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   allData();
-  // });
-};
 
-let picker = new Pikaday({ field: document.getElementById('datepicker') });
+// window.onload = () => {
+//   createStatesOptions();
+//   submitButton.addEventListener('click', (e) => {
+//     e.preventDefault();
+//   }
+// }
