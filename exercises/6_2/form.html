@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currículo Vitae</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Importando Google Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Importando Materialized CSS -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="materialize/css/materialize.css"
+      media="screen,projection"
+    />
+    <!-- CSS do Pikadate - Não usarei agora...
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css"> -->
+  </head>
+  <body class="card-panel black">
+    <section class="container">
+      <!-- <nav> -->
+      <!-- Fazer um menu flutuante para aprender a técnica -->
+      <!-- </nav> -->
+
+      <h1 class="card-panel grey darken-4 light-green-text text-accent-3">
+        Currículo Vitae
+      </h1>
+      <br />
+      <form action="" method="GET" enctype="multipart/form-data">
+        <fieldset class="card-panel grey lighten-2">
+          <div>
+            <label for="nome">Nome</label>
+            <input
+              type="text"
+              name="nome"
+              id="nome"
+              data-validate-field="name"
+              required="required"
+              placeholder="Digite seu nome"
+            />
+          </div>
+          <div>
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              data-validate-field="email"
+              required="required"
+              placeholder="Digite seu e-mail"
+              maxlength="50"
+            />
+          </div>
+          <div>
+            <label for="cpf">CPF</label>
+            <input
+              type="text"
+              name="cpf"
+              id="cpf"
+              required="required"
+              placeholder="Digite seu CPF"
+              maxlength="11"
+            />
+          </div>
+          <div>
+            <label for="endereço">Endereço</label>
+            <input
+              type="text"
+              name="endereço"
+              id="endereço"
+              required="required"
+              placeholder="Digite seu endereço"
+              maxlength="200"
+            />
+          </div>
+            <div>
+              <label for="cidade">Cidade</label>
+              <input
+                type="text"
+                name="cidade"
+                id="cidade"
+                required="required"
+                placeholder="Digite a cidade onde mora"
+                maxlength="28"
+              />
+            </div>
+            <!-- Seleção e estado como mostra no tutorial https://www.youtube.com/watch?v=P1cdsGSi2ss -->
+            <div>
+              <select name="estado" class="formSelect" id="estado">
+                <option value="" disabled selected
+                  >Selecione o seu estado</option
+                >
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option
+                ><option value="AP">Amapá</option
+                ><option value="AM">Amazonas</option
+                ><option value="BA">Bahia</option
+                ><option value="CE">Ceará</option
+                ><option value="DF">Destrito Federal</option
+                ><option value="ES">Espirito Santo</option
+                ><option value="GO">Goiás</option
+                ><option value="MA">Maranhão</option
+                ><option value="MT">Mato Grosso</option
+                ><option value="MS">Mato Grosso do Sul</option
+                ><option value="MG">Minas Gerais</option
+                ><option value="PA">Pará</option
+                ><option value="PB">Paraíba</option
+                ><option value="PR">Paraná</option
+                ><option value="PE">Pernambuco</option
+                ><option value="PI">Piauí</option
+                ><option value="RJ">Rio de Janeiro</option
+                ><option value="RN">Rio Grande do Norte</option
+                ><option value="RS">Rio Grande do Sul</option
+                ><option value="RO">Rondônia</option
+                ><option value="RR">Roraima</option
+                ><option value="SC">Santa Catrina</option
+                ><option value="SP">São Paulo</option
+                ><option value="SE">Sergipe</option
+                ><option value="TO">Tocantis</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <p>Selecione o seu tipo de moradia</p>
+            <label for="casa"
+              ><input
+                name="residencia"
+                id="casa"
+                value="casa"
+                type="radio"
+              /><span>Casa</span></label
+            >
+            <label for="Aparamento"
+              ><input
+                name="residencia"
+                id="Aparamento"
+                value="Aparamento"
+                type="radio"
+              /><span>Aparamento</span></label
+            >
+          </div>
+        </fieldset>
+        <fieldset class="card-panel grey lighten-2">
+          <div>
+            <label for="ultimoEmprego">Último emprego</label>
+            <textarea
+              name="ultimoEmprego"
+              id="ultimoEmprego"
+              required="required"
+              placeholder="Escreva brevemente um resumo da sua última experiência"
+              maxlength="10000"
+              cols="100"
+              rows="15"
+            ></textarea>
+          </div>
+          <div class="row">
+            <div class="col s6">
+              <label for="cargo">Cargo</label>
+              <input
+                type="text"
+                name="cargo"
+                id="cargo"
+                required="required"
+                maxlength="40"
+              />
+            </div>
+            <div class="col s6">
+              <label for="dataInicio">Data de início</label>
+              <input
+                class = 'datepicker'
+                name="dataInicio"
+                id="datepicker"
+                required="required"
+                type="date"
+              />
+            </div>
+          </div>
+          <div>
+            <label for="descricaoCargo">Descrição do cargo</label>
+            <input
+              type="text"
+              name="descricaoCargo"
+              id="descricaoCargo"
+              required="required"
+              maxlength="500"
+            />
+          </div>
+        </fieldset>
+        <div class="container">
+          <button
+            class="btn waves-effect waves-light btn-large"
+            id="submit"
+            type="submit"
+          >
+            Enviar
+            <i class="material-icons right">send</i>
+          </button>
+          <button class="btn-large disabled" id="button2" type="reset">
+            Apagar
+          </button>
+        </div>
+      </form>
+    </section>
+  </body>
+  <!--Importando o jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!--Importando o Materialize -->
+  <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+  <!--Importando o calendário pikaday -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script> -->
+
+  <!--Importando o Just Validate para validar as entradas do usuário-->
+  <!-- <script src="/node_modules/just-validate/dist/js/just-validate.min.js"></script> -->
+
+  <script type="text/javascript" src="script.js"></script>
+</html>
