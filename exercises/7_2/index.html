@@ -1,97 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Exercícios 7.3</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercícios 7.3</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
 
-    section {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      width: 90%;
-      height: 100px;
-      border: 1px solid red;
-      margin-bottom: 10px;
-      padding: 5px;
-    }
-    .flex-direction__column { flex-direction: column; }
-    .justify-content__space-between { justify-content: space-between; }
-    .justify-content__center { justify-content: center; }
-    .align-items__flex-start { align-items: flex-start; }
-    .automatic-box-height { height: auto; }
-    .ball { border-radius: 100%; }
-    .green { background-color: green; }
-    .blue { background-color: blue; }
-    .red { background-color: red; }
-    .yellow { background-color: yellow; }
-    .black { background-color: black; }
-    .medium {
-      width: 50px;
-      height: 50px;
-    }
-  </style>
-</head>
-<body>
-  <ol>
-    <li>
-      <section>
-        <div id="exercise-1" class="ball green medium"></div>
-      </section>
-    </li>
-    <li>
-      <section>
-        <div id="exercise-2" class="ball green medium"></div>
-      </section>
-    </li>
-    <li>
-      <section>
-        <div id="exercise-3" class="ball green medium"></div>
-      </section>
-    </li>
-    <li>
-      <section>
-        <div id="exercise-4" class="ball green medium"></div>
-      </section>
-    </li>
-    <li>
-      <section id="section-5">
-        <div id="exercise-5" class="ball green medium"></div>
-      </section>
-    </li>
-    <li>
-      <section class="justify-content__space-between">
-        <div id="exercise-6-square" class="blue medium"></div>
-        <div id="exercise-6" class="ball green medium"></div>
-      </section>
-    </li>
-    <li>
-      <section class="justify-content__center">
-        <div id="exercise-7" class="blue medium"></div>
-      </section>
-    </li>
-    <li>
-      <section class="justify-content__center">
-        <div id="exercise-8" class="red medium"></div>
-      </section>
-    </li>
-    <li>
-      <section class="justify-content__center">
-        <div id="exercise-9" class="red medium"></div>
-      </section>
-    </li>
-    <li>
-      <section class="justify-content__center">
-        <div id="exercise-10" class="red medium"></div>
-      </section>
-    </li>
+      section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 90%;
+        height: 100px;
+        border: 1px solid red;
+        margin-bottom: 10px;
+        padding: 5px;
+      }
+      .flex-direction__column {
+        flex-direction: column;
+      }
+      .justify-content__space-between {
+        justify-content: space-between;
+      }
+      .justify-content__center {
+        justify-content: center;
+      }
+      .align-items__flex-start {
+        align-items: flex-start;
+      }
+      .automatic-box-height {
+        height: auto;
+      }
+      .ball {
+        border-radius: 100%;
+      }
+      .green {
+        background-color: green;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .red {
+        background-color: red;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .black {
+        background-color: black;
+      }
+      .medium {
+        width: 50px;
+        height: 50px;
+      }
+      #exercise-1 {
+        animation-name: exercise-1-2-3-4;
+        animation-duration: 3s;
+        animation-delay: 1s;
+      }
+      #exercise-2 {
+        animation-name: exercise-1-2-3-4;
+        animation-duration: 2s;
+        animation-delay: 2s;
+        animation-fill-mode: forwards;
+      }
+      #exercise-3 {
+        animation-name: exercise-1-2-3-4;
+        animation-duration: 1s;
+        animation-delay: 1s;
+        animation-iteration-count: 2;
+        animation-direction: alternate;
+      }
+      #exercise-4:hover {
+        animation-name: exercise-1-2-3-4;
+        animation-duration: 5s;
+      }
+      #section-5:hover > #exercise-5 {
+        animation-duration: 5s;
+        animation-name: exercise-1-2-3-4;
+      }
+
+      @keyframes exercise-1-2-3-4 {
+        from {
+          margin-left: 0px;
+        }
+        to {
+          margin-left: 97%;
+        }
+      }
+
+      /* Not working */
+      #exercise-6-square:hover + #exercise-6 {
+        animation-duration: 5s;
+        animation-name: exercise-6;
+      }
+      @keyframes exercise-6 {
+        from {
+          margin-left: 97px;
+        }
+        to {
+          margin-left: 0%;
+        }
+      }
+      #exercise-7 {
+        animation-duration: 10s;
+        animation-name: exercise-7;
+        animation-iteration-count: infinite;
+      }
+      @keyframes exercise-7 {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      #exercise-8 {
+        animation-duration: 4s;
+        animation-name: exercise-8;
+      }
+      @keyframes exercise-8 {
+        0% {
+          background-color: red;
+        }
+        100% {
+          background-color: yellow;
+        }
+      }
+      #exercise-9 {
+        animation-duration: 4s;
+        animation-name: exercise-9;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      @keyframes exercise-9 {
+        0% {
+          background-color: red;
+        }
+        33% {
+          background-color: yellow;
+        }
+        66% {
+          background-color: blue;
+        }
+        100% {
+          background-color: green;
+        }
+      }
+      #exercise-10 {
+        animation-duration: 4s;
+        animation-name: exercise-10;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      @keyframes exercise-10 {
+        0% {
+          background-color: red;
+          transform: scale(1);
+        }
+        33% {
+          background-color: yellow;
+          transform: scale(2);
+        }
+        66% {
+          background-color: blue;
+          transform: scale(2);
+        }
+        100% {
+          background-color: green;
+          transform: scale(1);
+        }
+      }
+      #exercise-11_1 {
+        animation: exercise-11 3s;
+        animation-delay: 2s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+
+      #exercise-11_2 {
+        animation: exercise-11 3s;
+        animation-delay: 2s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
+      }
+      #exercise-11_3 {
+        animation: exercise-11 3s;
+        animation-delay: 2s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in;
+      }
+
+      #exercise-11_4 {
+        animation: exercise-11 3s;
+        animation-delay: 2s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-out;
+      }
+
+      #exercise-11_5 {
+        animation: exercise-11 3s;
+        animation-delay: 2s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+      }
+      @keyframes exercise-11 {
+        from {
+          margin-left: 0%;
+        }
+        to {
+          margin-left: 96%;
+        }
+      }
+      #exercise-12 {
+        opacity: 1;
+      }
+      #exercise-12:active {
+        animation: exercise-12 1s forwards;
+      }
+
+      @keyframes exercise-12 {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <ol>
       <li>
-        <section class="flex-direction__column align-items__flex-start automatic-box-height">
+        <section>
+          <div id="exercise-1" class="ball green medium"></div>
+        </section>
+      </li>
+      <li>
+        <section>
+          <div id="exercise-2" class="ball green medium"></div>
+        </section>
+      </li>
+      <li>
+        <section>
+          <div id="exercise-3" class="ball green medium"></div>
+        </section>
+      </li>
+      <li>
+        <section>
+          <div id="exercise-4" class="ball green medium"></div>
+        </section>
+      </li>
+      <li>
+        <section id="section-5">
+          <div id="exercise-5" class="ball green medium"></div>
+        </section>
+      </li>
+      <li>
+        <section class="justify-content__space-between">
+          <div id="exercise-6-square" class="blue medium"></div>
+          <div id="exercise-6" class="ball green medium"></div>
+        </section>
+      </li>
+      <li>
+        <section class="justify-content__center">
+          <div id="exercise-7" class="blue medium"></div>
+        </section>
+      </li>
+      <li>
+        <section class="justify-content__center">
+          <div id="exercise-8" class="red medium"></div>
+        </section>
+      </li>
+      <li>
+        <section class="justify-content__center">
+          <div id="exercise-9" class="red medium"></div>
+        </section>
+      </li>
+      <li>
+        <section class="justify-content__center">
+          <div id="exercise-10" class="red medium"></div>
+        </section>
+      </li>
+      <li>
+        <section
+          class="flex-direction__column align-items__flex-start automatic-box-height"
+        >
           <div id="exercise-11_1" class="red medium"></div>
           <div id="exercise-11_2" class="blue medium"></div>
           <div id="exercise-11_3" class="green medium"></div>
@@ -104,6 +310,6 @@
           <div id="exercise-12" class="black medium"></div>
         </section>
       </li>
-  </ol>
-</body>
+    </ol>
+  </body>
 </html>
