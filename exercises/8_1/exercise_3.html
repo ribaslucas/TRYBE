@@ -1,0 +1,28 @@
+<!-- Sei fazer o HTML, mas não sei fazer a função -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Click Count</title>
+</head>
+<body>
+  <input type="button" value="Click Count" id="btn">
+  <input type="text" name="" value="0" id="text">
+
+<script>
+  window.onload = () => {
+    const btn = document.querySelector('#btn');
+    const txt = document.querySelector('#text');
+    let click = 0;
+    btn.addEventListener('click', () => {
+      click += 1;
+      txt.value = click;
+    });
+  }
+</script>
+
+</body>
+</html>
