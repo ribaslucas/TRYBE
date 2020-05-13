@@ -5,25 +5,32 @@
 let a = 20; 
 let b = 10; 
 
-// Program 1 - Sum //
+// Program 1 - Sum // Dá para ser feito de 3 maneiras. A primeira é a mais clássica
+// a segunda seria uma maneira mais simples e a terceira é a arrow function da primeira.
 
 function soma(x, y) {
     return x + y;
     }
     console.log(soma(a, b))
 
-// let sum = a + b;
-// console.log (sum);
+let sum = a + b;
+console.log (sum);
+
+const somatorio = (a, b) => a + b;
+console.log(somatorio(a, b))
 
 
 // Program 2 - Subtraction //
-function subtraction(e, f) {
+function subtracao(e, f) {
     return e - f 
 }
-console.log(subtraction(a, b))
+console.log(subtracao(a, b))
 
-// let subtration = a - b;
-// console.log (subtration);
+let subtration = a - b;
+console.log (subtration);
+
+const sub = (a, b) => a - b;
+console.log
 
 // Program 2 - Multiplication //
 
@@ -39,3 +46,5 @@ console.log (division);
 
 //let module = a % b;
 //console.log (module);
+
+

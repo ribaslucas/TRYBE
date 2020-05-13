@@ -14,3 +14,4 @@ else if (somaAngulos === 180) {
 else {
     console.log (triangulo)
 }
+
