@@ -2,13 +2,15 @@
 // seja n > 1, imprima na tela um quadrado feito de asteriscos de lado de tamanho n. Por exemplo:
 
 let n = 5;
-let lineIndex;
-let symbol = '*';
-let inputLine = '';
+let numeroDeLinhas;// ou posição da linha
+let asterisco = '*';
+let inputLine = ''; // é aonde eu vou jogar os asteriscos. 
 
-for (lineIndex = 0; lineIndex < n; lineIndex++) {
-  inputLine = inputLine + symbol;
+for (numeroDeLinhas = 0; numeroDeLinhas < n; numeroDeLinhas++) {
+  inputLine = inputLine + asterisco;
+  console.log(inputLine);
 };
-for (lineIndex = 0; lineIndex < n; lineIndex++) {
+
+for (numeroDeLinhas = 0; numeroDeLinhas < n; numeroDeLinhas++) {
   console.log(inputLine);
 };

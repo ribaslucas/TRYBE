@@ -8,3 +8,8 @@ let info = {
 for (let key in info) {
     console.log(info[key])
 }
+
+// A forma abaixo mostra o par chave - valor
+for (let key in info) {
+  console.log(key, info[key])
+}

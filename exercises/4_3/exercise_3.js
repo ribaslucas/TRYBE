@@ -8,7 +8,9 @@ let inputLine = '';
 let inputPosition = n;
 
 for (lineIndex = 0; lineIndex < n; lineIndex++) {
+  // console.log('executou o primeiro for');
   for (columnIndex = 0; columnIndex <= n; columnIndex++) {
+    // console.log('executou o segundo for');
     if (columnIndex < inputPosition) {
       inputLine = inputLine + ' ';
     } else {
