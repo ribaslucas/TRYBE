@@ -1,5 +1,7 @@
-// Faça uma função que retorne true, se todas as pessoas autoras 
-// nasceram no século XX, ou false, caso contrário.
+// Encontre o nome do livro escrito pela pessoa cujo nome registrado 
+// começa com três iniciais (terminam com um ponto).
+
+// Dica: use as funções find e filter;
 
 const assert = require('assert');
 
@@ -66,10 +68,15 @@ const books = [
   },
 ];
 
-const expected_result = false
+const expected_result = 'O Senhor dos Anéis';
 
-function everyoneWasBornOnSecXX() {
-  return books.every(book => (book.author.birthYear > 1900 && book.author.birthYear <= 2000)
-)};
+function authorWith3DotsOnName() {
+  return books.find(book => (book.author.name.split(' ').filter(word => word.endsWith('.')).length === 3)).name;
+}
 
-assert.equal(everyoneWasBornOnSecXX(), expected_result);
+assert.deepEqual(authorWith3DotsOnName(), expected_result);
+
+// Encontre o nome do livro escrito pela pessoa cujo nome registrado 
+// começa com três iniciais (terminam com um ponto).
+
+// Dica: use as funções find e filter;
