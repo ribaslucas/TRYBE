@@ -1,8 +1,6 @@
-// Let's start 
+// Crie um array com strings no formato NOME_DO_LIVRO - GÊNERO_DO_LIVRO - NOME_DA_PESSOA_AUTORA
 
-// Crie um array ordenado com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
-
-// Dica: use as funções filter e map
+// Dica: Use a função map
 
 const assert = require('assert');
 
@@ -70,20 +68,22 @@ const books = [
 ];
 
 const expected_result = [
-  'Frank Herbert',
-  'George R. R. Martin',
-  'Isaac Asimov',
-  'J. R. R. Tolkien'
-]
+  'As Crônicas de Gelo e Fogo - Fantasia - George R. R. Martin',
+  'O Senhor dos Anéis - Fantasia - J. R. R. Tolkien',
+  'Fundação - Ficção Científica - Isaac Asimov',
+  'Duna - Ficção Científica - Frank Herbert',
+  'A Coisa - Terror - Stephen King',
+  'O Chamado de Cthulhu - Terror - H. P. Lovecraft'
+];
 
-function fantasyOrScienceFictionAuthors() {
-  return books
-  .filter(book => (book.genre == 'Ficção Científica' || book.genre == 'Fantasia'))
-  .map(book => book.author.name).sort();
+function formatedBookNames() {
+  return books.map(book => `${book.name} - ${book.genre} - ${book.author.name}`);
 }
 
-assert.deepEqual(fantasyOrScienceFictionAuthors(), expected_result);
+assert.deepEqual(formatedBookNames(), expected_result);
 
-// Crie um array ordenado com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
 
-// Dica: use as funções filter e map
+
+// Crie um array com strings no formato NOME_DO_LIVRO - GÊNERO_DO_LIVRO - NOME_DA_PESSOA_AUTORA
+
+// Dica: Use a função map

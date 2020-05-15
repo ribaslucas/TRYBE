@@ -1,8 +1,6 @@
-// Let's start 
+// Calcule a média de idade que as pessoas autoras tinham quando seus respectivos livros foram lançados.
 
-// Crie um array ordenado com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
-
-// Dica: use as funções filter e map
+// exercise4.js
 
 const assert = require('assert');
 
@@ -69,21 +67,19 @@ const books = [
   },
 ];
 
-const expected_result = [
-  'Frank Herbert',
-  'George R. R. Martin',
-  'Isaac Asimov',
-  'J. R. R. Tolkien'
-]
+const expected_result = 43;
 
-function fantasyOrScienceFictionAuthors() {
-  return books
-  .filter(book => (book.genre == 'Ficção Científica' || book.genre == 'Fantasia'))
-  .map(book => book.author.name).sort();
+function averageAge() {
+  const numberOfBooks = books.length;
+  const sumOfAges = books.reduce((sum, book) => (
+    sum + (book.releaseYear - book.author.birthYear)
+  ), 0)
+  return sumOfAges / numberOfBooks;
 }
 
-assert.deepEqual(fantasyOrScienceFictionAuthors(), expected_result);
+assert.equal(averageAge(), expected_result);
 
-// Crie um array ordenado com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
 
-// Dica: use as funções filter e map
+// Calcule a média de idade que as pessoas autoras tinham quando seus respectivos livros foram lançados.
+
+// exercise4.js

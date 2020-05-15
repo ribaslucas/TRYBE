@@ -1,8 +1,6 @@
-// Let's start 
+// Crie uma string com os nomes de todas as pessoas autoras.
 
-// Crie um array ordenado com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
-
-// Dica: use as funções filter e map
+// Dica: use reduce
 
 const assert = require('assert');
 
@@ -69,21 +67,17 @@ const books = [
   },
 ];
 
-const expected_result = [
-  'Frank Herbert',
-  'George R. R. Martin',
-  'Isaac Asimov',
-  'J. R. R. Tolkien'
-]
+const reduceNames = (acc, book, index, array) => {
+  if (index === array.length - 1) return `${acc} ${book.author.name}.`;
+  return `${acc} ${book.author.name},`;
+};
 
-function fantasyOrScienceFictionAuthors() {
-  return books
-  .filter(book => (book.genre == 'Ficção Científica' || book.genre == 'Fantasia'))
-  .map(book => book.author.name).sort();
+function allNames() {
+  return books.reduce(reduceNames,'Nomes:')
 }
 
-assert.deepEqual(fantasyOrScienceFictionAuthors(), expected_result);
+assert.deepEqual(allNames(), "Nomes: George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.");
 
-// Crie um array ordenado com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
+// Crie uma string com os nomes de todas as pessoas autoras.
 
-// Dica: use as funções filter e map
+// Dica: use reduce

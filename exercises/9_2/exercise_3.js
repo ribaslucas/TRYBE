@@ -1,6 +1,4 @@
-// Let's start 
-
-// Crie um array ordenado com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
+// Crie um array com o nome de todos os livros com mais de 60 anos de publicação.
 
 // Dica: use as funções filter e map
 
@@ -70,20 +68,16 @@ const books = [
 ];
 
 const expected_result = [
-  'Frank Herbert',
-  'George R. R. Martin',
-  'Isaac Asimov',
-  'J. R. R. Tolkien'
+  'O Senhor dos Anéis',
+  'Fundação',
+  'O Chamado de Cthulhu'
 ]
 
-function fantasyOrScienceFictionAuthors() {
+function oldBooks() {
+  const anoAtual = new Date().getFullYear();
   return books
-  .filter(book => (book.genre == 'Ficção Científica' || book.genre == 'Fantasia'))
-  .map(book => book.author.name).sort();
+  .filter(book => anoAtual - book.releaseYear > 60)
+  .map(book => book.name);
 }
-
-assert.deepEqual(fantasyOrScienceFictionAuthors(), expected_result);
-
-// Crie um array ordenado com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
-
-// Dica: use as funções filter e map
+console.log(oldBooks(books));
+assert.deepEqual(oldBooks(), expected_result);

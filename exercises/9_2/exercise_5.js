@@ -1,8 +1,6 @@
-// Let's start 
+// Encontre o livro com o maior nome.
 
-// Crie um array ordenado com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
-
-// Dica: use as funções filter e map
+// Dica: Use a função reduce
 
 const assert = require('assert');
 
@@ -69,21 +67,28 @@ const books = [
   },
 ];
 
-const expected_result = [
-  'Frank Herbert',
-  'George R. R. Martin',
-  'Isaac Asimov',
-  'J. R. R. Tolkien'
-]
+const expected_result = {
+  author: {
+    birthYear: 1948,
+    name: 'George R. R. Martin'
+  },
+  genre: 'Fantasia',
+  id: 1,
+  name: 'As Crônicas de Gelo e Fogo',
+  releaseYear: 1991
+};
 
-function fantasyOrScienceFictionAuthors() {
-  return books
-  .filter(book => (book.genre == 'Ficção Científica' || book.genre == 'Fantasia'))
-  .map(book => book.author.name).sort();
+function longestNamedBook() {
+  return books.reduce((maiorTitulo, livroAtual) => {
+    if (livroAtual.name.length > maiorTitulo.name.length) {
+      return livroAtual;
+    }
+    return maiorTitulo;
+  });
 }
+console.log(longestNamedBook(books));
+assert.deepEqual(longestNamedBook(), expected_result);
 
-assert.deepEqual(fantasyOrScienceFictionAuthors(), expected_result);
+// Encontre o livro com o maior nome.
 
-// Crie um array ordenado com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
-
-// Dica: use as funções filter e map
+// Dica: Use a função reduce
