@@ -1,30 +1,19 @@
-    // let n = 5;
+// Minha resposta após revisar o matrial
 
-    // for (let index = 1; index <= n; index += 2) {
-    //     let blank = " ".repeat((n - index) / 2);
-    //     let l = "*".repeat(index);
-    //     console.log(blank + l + blank);
-    // }
+// Com o mesmo código do exercício anterior, caso valor final seja maior que 20, 
+// imprima a mensagem: “valor maior que 20”. Caso não seja, imprima a 
+// mensagem: “valor menor ou igual a 20”;
 
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let result = 0;
 
-    let n = 5;
-    let lineIndex;
-    let lineColumn;
-    let lineInput = '';
-    let symbol = '*';
-    let midOfMatrix = (n + 1) / 2;
-    let controlLeft = midOfMatrix;
-    let controlRight= midOfMatrix;
-    for (lineIndex = 0; lineIndex <= midOfMatrix; lineIndex++) {
-      for (lineColumn = 1; lineColumn <= n; lineColumn++) {
-        if (lineColumn > controlRight && lineColumn < controlLeft) {
-          lineInput = lineInput + symbol;
-        } else {
-          lineInput = lineInput + ' ';
-        }
-      }
-      console.log(lineInput);
-      lineInput = '';
-      controlRight--;
-      controlLeft++;
-    
+for (let i = 0; i < numbers.length; i++) {
+    result += numbers[i];
+}
+let mediaAritmetica = result / numbers.length
+
+if (mediaAritmetica > 20) {
+  console.log('Valor maior que 20');
+} else {
+  console.log('Valor menor ou igual a 20');
+}

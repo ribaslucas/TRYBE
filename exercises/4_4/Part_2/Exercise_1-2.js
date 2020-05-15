@@ -1,6 +1,6 @@
 function verificaPalimero(string) {
     for (index in string) {
-        if (string[index] === string[string.length - 1 - index]) {
+        if (string[index] === string[(string.length - 1) - index]) {
             return true;
         }
         else {
@@ -9,7 +9,9 @@ function verificaPalimero(string) {
     }
 } 
 
-console.log(verificaPalimero("arara")); 
+console.log(verificaPalimero("arara"));
+console.log(verificaPalimero("desenvolvimento"));
+console.log(verificaPalimero("sator arepo tenet opera rotas"));
 
 
   
