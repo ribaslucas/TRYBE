@@ -1,3 +1,8 @@
+// Encontre o nome da pessoa autora do livro nascida no ano de 1947.
+
+// A resposta tem muitas arrow functions. Quando revisar o desafio é reescrever tudo usando
+// função declarativa: function nomeDaFunção () {} e o for clássico.
+
 const assert = require('assert');
 
 const books = [
@@ -67,3 +72,4 @@ const authorBornIn1947 = () =>
   books.find(book => book.author.birthYear === 1947).author.name;
   
 assert.equal(authorBornIn1947(), 'Stephen King');
+
