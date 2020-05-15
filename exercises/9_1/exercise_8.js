@@ -1,5 +1,4 @@
-// Faça uma função que retorne true, se todas as pessoas autoras 
-// nasceram no século XX, ou false, caso contrário.
+// Crie um array ordenado pelos livros com mais de 60 anos de publicação e ordene-o pelo livro mais velho.
 
 const assert = require('assert');
 
@@ -66,10 +65,36 @@ const books = [
   },
 ];
 
-const expected_result = false
+const expected_result = [
+  {
+    id: 6,
+    name: 'O Chamado de Cthulhu',
+    genre: 'Terror',
+    author: { name: 'H. P. Lovecraft', birthYear: 1890 },
+    releaseYear: 1928
+  },
+  {
+    id: 3,
+    name: 'Fundação',
+    genre: 'Ficção Científica',
+    author: { name: 'Isaac Asimov', birthYear: 1920 },
+    releaseYear: 1951
+  },
+  {
+    id: 2,
+    name: 'O Senhor dos Anéis',
+    genre: 'Fantasia',
+    author: { name: 'J. R. R. Tolkien', birthYear: 1892 },
+    releaseYear: 1954
+  }
+]
 
-function everyoneWasBornOnSecXX() {
-  return books.every(book => (book.author.birthYear > 1900 && book.author.birthYear <= 2000)
-)};
+function oldBooks() {
+  return books.filter(book => (book.releaseYear < 1960)).sort((bookA, bookB) => bookA.releaseYear - bookB.releaseYear);
 
-assert.equal(everyoneWasBornOnSecXX(), expected_result);
+}
+
+assert.deepEqual(oldBooks(), expected_result);
+
+
+// Crie um array ordenado pelos livros com mais de 60 anos de publicação e ordene-o pelo livro mais velho.
