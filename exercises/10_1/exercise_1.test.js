@@ -1,4 +1,4 @@
-const {sum, myIndexOf, mySum, myRemove, myRemoveWithoutCopy, myFizzBuzz, } = require('./exercise_1');
+const {sum, myIndexOf, mySum, myRemove, myRemoveWithoutCopy, myFizzBuzz, isAbove, } = require('./exercise_1');
 
 // Exercise 8.3/1
   // toBe e toEqual são equivalentes para números
@@ -60,7 +60,7 @@ describe('Exercise 8.3/5', () => {
 
 // Exercise 8.3/6
 
-describe('Exercise 8.3/5', () => {
+describe('Exercise 8.3/6', () => {
   test('resultados do fizzbuzz', () => {
   expect(myFizzBuzz(15)).toEqual('fizzbuzz');
   expect(myFizzBuzz(9)).toEqual('fizz');
@@ -68,5 +68,60 @@ describe('Exercise 8.3/5', () => {
   expect(myFizzBuzz(17)).toEqual(17);
   expect(myFizzBuzz('this_is_not_a_number')).toBe(false)
   // assert.strictEqual(myFizzBuzz('this_is_not_a_number'), false);
+  });
+});
+
+// Exercise 8.3/7
+
+describe('Exercise 8.3/7', () => {
+  const thereIs = '';
+    test('therrIs is a string', () => {
+      expect(typeof thereIs).toBe('string');
+    });
+});
+
+// Exercise 8.3/8
+
+describe('Exercise 8.3/8', () => {
+  function thereIs() {};
+    test('thereIs is a function', () => {
+      expect(typeof thereIs).toBe('function');
+    });
+});
+
+// Exercise 8.3/9 - não é para fazer
+
+// Exercise 8.3/10
+
+const obj1 = {
+  title: 'My Title',
+  description: 'My Description',
+};
+
+const obj2 = {
+  description: 'My Description',
+  title: 'My Title',
+};
+
+const obj3 = {
+  title: 'My Different Title',
+  description: 'My Description',
+};
+
+describe('Exercise 8.3/10', () => {
+  test('comparing objects', () => {
+    expect(obj1).toStrictEqual(obj2);
+    expect(obj1).not.toStrictEqual(obj3);
+    expect(obj2).not.toStrictEqual(obj3);
+  });
+});
+
+// Exercise 8.3/11
+
+describe('Exercise 8.3/11', () => {
+  test ('comparing a is bigger than b', () => {
+    expect(isAbove(7, 5)).toStrictEqual(true);
+    expect(isAbove(7, 7)).toStrictEqual(false);
+    expect(isAbove(7, 8)).toStrictEqual(false);
   });
 });

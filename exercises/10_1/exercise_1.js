@@ -66,29 +66,19 @@ function myFizzBuzz(num) {
   return num;
 }
 
+// Exercise 8.3/7 - está tudo no arquivo de teste
 
+// Exercise 8.3/8 - está tudo no arquivo de teste
 
+// Exercise 8.3/9 - não é para fazer
 
+// Exercise 8.3/10 - está tudo no arquivo de teste
 
+// Exercise 8.3/11
 
+function isAbove(num1, num2) {
+  return num1 > num2;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-module.exports = {sum, myIndexOf, mySum, myRemove, myRemoveWithoutCopy, myFizzBuzz, };
+module.exports = {sum, myIndexOf, mySum, myRemove, myRemoveWithoutCopy, myFizzBuzz, isAbove, };
 
