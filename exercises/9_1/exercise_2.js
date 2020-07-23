@@ -75,8 +75,7 @@ function smallerName() {
       nameBook = book.name;
     }
   });
-
-  // Variável nameBook que receberá o valor do menor nome;
+  
   return nameBook;
 }
 console.log(smallerName());
