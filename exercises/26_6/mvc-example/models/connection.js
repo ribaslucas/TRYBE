@@ -6,7 +6,7 @@ const connection = () => {
       user: 'root',
       password: 'Vemprariba001',
       host: 'localhost',
-      port: 33060,
+      port: 3306,
       schema: 'mvc_example',
     })
     .then((session) => {
