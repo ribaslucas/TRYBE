@@ -4,9 +4,9 @@ const connection = () => {
   return mysqlx
     .getSession({
       user: 'root',
-      password: 'Vemprariba001',
+      password: 'root',
       host: 'localhost',
-      port: 3306,
+      port: 33060,
       schema: 'mvc_example',
     })
     .then((session) => {

@@ -60,7 +60,26 @@ const findById = async (id) => {
   return getNewAuthor({ id, firstName, middleName, lastName });
 };
 
+const isValid = (firstName, middleName, lastName) => {
+  if (!firstName || typeof firstName !== 'string') return false;
+  if (!lastName || typeof lastName !== 'string') return false;
+  if (middleName && typeof middleName !== 'string') return false;
+
+  return true;
+};
+
+const create = async (firstName, middleName, lastName) =>
+  connection().then((db) =>
+    db
+      .getTable('authors')
+      .insert(['first_name', 'middle_name', 'last_name'])
+      .values(firstName, middleName, lastName)
+      .execute(),
+  );
+
 module.exports = {
   getAll,
   findById,
+  isValid,
+  create,
 };
