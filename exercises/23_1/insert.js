@@ -1,13 +1,5 @@
 // para inicializar o banco de dados 
-
 use sample;
-
-// para inserir um documento dentro do banco de dados
-
-db.products.insertOne({
-  productName: "caixa",
-  price: 20
-});
 
 // para inserir vários documentos no banco de dados
 
